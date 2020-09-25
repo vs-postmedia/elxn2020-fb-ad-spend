@@ -1,11 +1,16 @@
 import React from 'react';
+import AdSpendTracker from '../AdSpendTracker/AdSpendTracker';
 import './App.css';
 
+const adSpendUrl = 'https://vs-postmedia-data.sfo2.digitaloceanspaces.com/elxn/ad-spend.json';
 
 function App() {
 	return (
 	  	<div className="App">
-	  		<h1>React template</h1>
+	  		<h1>Amount spent on Facebook ads since the election was called</h1>
+	  		<AdSpendTracker	
+	  			dataUrl={adSpendUrl}>
+	  		</AdSpendTracker>
 	  	</div>
 	);
 }
