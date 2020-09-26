@@ -7,7 +7,7 @@ const adSpendUrl = 'https://vs-postmedia-data.sfo2.digitaloceanspaces.com/elxn/a
 function App() {
 	return (
 	  	<div className="App">
-	  		<h1>Amount spent on Facebook ads since the election was called</h1>
+	  		<h1>Amount spent on Facebook ads since the election was called on Sept. 21</h1>
 	  		<AdSpendTracker	
 	  			dataUrl={adSpendUrl}>
 	  		</AdSpendTracker>
