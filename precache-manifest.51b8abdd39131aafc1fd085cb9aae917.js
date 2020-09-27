@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3808ad06f858755591712112dccaaddb",
+    "revision": "c3522638b036fd0d5cf67b1d31b32593",
     "url": "/elxn2020-fb-ad-spend/index.html"
   },
   {
-    "revision": "c1104a26d9dbc2192dc6",
-    "url": "/elxn2020-fb-ad-spend/static/css/main.e885ff9a.chunk.css"
+    "revision": "35f602095d774c390941",
+    "url": "/elxn2020-fb-ad-spend/static/css/main.aa7a3a52.chunk.css"
   },
   {
-    "revision": "eaccb1ea10448132579c",
-    "url": "/elxn2020-fb-ad-spend/static/js/2.5a1d0a1d.chunk.js"
+    "revision": "800ecac8f25373ea1200",
+    "url": "/elxn2020-fb-ad-spend/static/js/2.e86c9064.chunk.js"
   },
   {
     "revision": "99bd0487192ec9e7d9ee8fbbd91ee444",
-    "url": "/elxn2020-fb-ad-spend/static/js/2.5a1d0a1d.chunk.js.LICENSE.txt"
+    "url": "/elxn2020-fb-ad-spend/static/js/2.e86c9064.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "c1104a26d9dbc2192dc6",
-    "url": "/elxn2020-fb-ad-spend/static/js/main.28f24369.chunk.js"
+    "revision": "35f602095d774c390941",
+    "url": "/elxn2020-fb-ad-spend/static/js/main.db8736f4.chunk.js"
   },
   {
     "revision": "6332cfa16e9cde746366",
