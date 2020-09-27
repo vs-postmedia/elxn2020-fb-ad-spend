@@ -14,7 +14,6 @@ export default class AdSpendTracker extends Component {
 	componentDidMount() {
 		Axios.get(this.props.dataUrl)
 			.then(resp => {
-				console.log(resp.data)
 				this.setState({
 					last_update: resp.data.lastUpdate,
 					party_data: resp.data.party_total,
@@ -46,12 +45,3 @@ export default class AdSpendTracker extends Component {
 		}
 	}
 }
-
-
-/*
-<iframe src='https://flo.uri.sh/visualisation/3821637/embed' title='party-spend' frameBorder='0' scrolling='no' width='100%' height='400' aria-label=''></iframe>
-w
-<DailyCharts
-	data={this.state.party_daily}>
-</DailyCharts>
-*/

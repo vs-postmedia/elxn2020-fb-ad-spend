@@ -1,3 +1,7 @@
+.App .daily-charts h2 {
+	margin-bottom: 15px;
+}
+
 .daily-charts #charts {
 	display: flex;
 	flex-direction: column;
@@ -6,8 +10,7 @@
 }
 
 .daily-charts #charts > svg {
-/*	flex: 1;
-	width: 100%;*/
+	margin-bottom: 20px;
 }
 
 /* AXIS */
@@ -21,13 +24,22 @@
 	font-size: 0.9rem;
 }
 
+.daily-charts #charts .label-text {
+	font-family: BentonSansCond-Regular, Helvetica, sans-serif;
+	font-size: 1.25rem;
+	transform: translate(-45px, 10px);
+
+}
 /* PARTY COLOURS*/
+.daily-charts #charts .label-text.green,
 .daily-charts #charts .green rect {
 	fill: var(--greenbc);
 }
+.daily-charts #charts .label-text.liberal,
 .daily-charts #charts .liberal rect {
 	fill: var(--liberalbc);
 }
+.daily-charts #charts .label-text.ndp,
 .daily-charts #charts .ndp rect {
 	fill: var(--npdbc);
 }
@@ -42,10 +54,9 @@
 	display: none;
 }
 
-.daily-charts #charts .annotations .annotation-note-title tspan {
+.daily-charts #charts .annotations .annotation-note-title {
 	font-family: BentonSansCond-Regular, Helvetica, sans-serif;
 	font-size: 0.9rem;
-	text-align: center;
 }
 
 
@@ -72,6 +83,7 @@
 
     .daily-charts #charts > svg {
     	flex: 1;
+    	margin: 0;
     	width: 100%;
     }
 }

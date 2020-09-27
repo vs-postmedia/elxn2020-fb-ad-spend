@@ -22,7 +22,7 @@ const SummaryBox = (props) => {
 					})
 				}
 			</div>
-			<p className="last-update">{`Last updated: ${month} ${day}`}</p>
+			<p className="last-update">{`From Sept. 21 to ${month} ${day}`}</p>
 		</div>
 	);
 }

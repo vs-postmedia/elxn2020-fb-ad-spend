@@ -7,14 +7,14 @@ import './DrawChart.css';
 
 
 // THE GOOD STUFF
-let height, width, x, y, drawAnnotations,drawLabels;
+let annotations, height, width, x, y;
 const yTicks = 5;
 const breakpoint = 600;
 const popup = Popup();
 const margin = {
 	top: 10,
-	right: 15,
-	bottom: 35,
+	right: 25,
+	bottom: 40,
 	left: 45
 };
 
@@ -31,7 +31,7 @@ async function DrawChart(props) {
 	const chart = d3.select('#charts');
 	const dims = chart.node().getBoundingClientRect();
 
-	height = dims.height / 3;
+	height = (dims.height - margin.bottom - margin.top) / 3;
 	width = dims.width - margin.left;
 	// stacked on mobile
 	if (window.innerWidth > breakpoint) {
@@ -39,8 +39,10 @@ async function DrawChart(props) {
 		width = (dims.width / 3) - margin.left - margin.right;
 	}
 	
-	setupAnnotations(height, margin)
+	annotations = setupAnnotations(height, margin);
 	console.log(dims)
+
+	console.log(height)
 
 	// setup our svg
 	const svg = chart.selectAll('svg')
@@ -49,10 +51,13 @@ async function DrawChart(props) {
 			.attr('class', d => d.party.toLowerCase())
 			.style('height', `${height}px`)
 			.style('width', `${width + margin.left}px`)
-			// .text(d => d.party)s
 			.append('g')
-				.attr('transform', `translate(${margin.left}, ${margin.top})`)
-
+				.attr('transform', `translate(${margin.left}, ${margin.top})`);
+			
+	// label charts
+	svg.append('text')
+		.text(d => d.party)
+		.attr('class', d => `${d.party.toLowerCase()} label-text`);
 
 
     // Add axes
@@ -75,12 +80,42 @@ async function DrawChart(props) {
     		.on('mouseover', handleMouseOver)
     		.on('mouseout', handleMouseOut);
 
-
-	svg.append('g')
+    // annotations
+    svg.append('g')
 		.attr('class', 'annotation-group')
 		.call(drawAnnotations)
+
+
+	// svg.append('g')
+	// 	.data(data)
+	// 	.attr('class', 'annotation-group')
+	// 	.append('text')
+	// 	.text('Election called')
+	// 	.attr()
+	// 	.style('transform', d => {
+	// 		console.log(d)
+	// 		return `translate(0, 10px)`
+	// 	})
 }
 
+const drawAnnotations = () => {
+	console.log(annotations)
+	d3_annotation.annotation()
+		.type(d3_annotation.annotationXYThreshold)
+		// gives you access to any data in the annotations array
+		.accessors({
+			x: d => {
+				console.log(x)
+				return x(new Date(d.x))
+			},
+			y: d =>{
+				console.log(y)
+				return y(d.y)
+			}
+		})
+		.annotations(annotations)
+		.textWrap(30);
+}
 
 const handleMouseOut = (d) => {
 	popup.hide();
@@ -110,7 +145,7 @@ const parseData = (props) => {
 };
 
 const setupAnnotations = (height, margin) => {
-	const annotations = [{
+	return [{
 		className: 'annotation-text',
 		data: { x: '09/21/2020'},
 		note: { 
@@ -123,17 +158,8 @@ const setupAnnotations = (height, margin) => {
 		},
 		y: margin.top - 15
 	}];
-
-	drawAnnotations = d3_annotation.annotation()
-		.type(d3_annotation.annotationXYThreshold)
-		// gives you access to any data in the annotations array
-		.accessors({
-			x: d => x(new Date(d.x)),
-			y: d => y(d.y)
-		})
-		.annotations(annotations)
-		.textWrap(30)
 }
+
 const xAxis = g => {
 	const xScale = x.domain();
 	g.attr('transform', `translate(0, ${height - margin.bottom})`)
@@ -142,7 +168,7 @@ const xAxis = g => {
 			.tickSize(0)
 			.tickFormat(d3.timeFormat('%b. %d'))
 			.tickPadding([10])
-			.tickValues([xScale[0], xScale[xScale.length - 1]])
+			.tickValues([xScale[0], 	xScale[xScale.length - 1]])
 		)
 };
 
