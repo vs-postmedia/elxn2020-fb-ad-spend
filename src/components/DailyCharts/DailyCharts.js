@@ -15,6 +15,7 @@ const DailyCharts = (props) => {
 			{
 				props.data.map(d => {
 					console.log(d)
+					return null
 				})
 			}
 			</div>

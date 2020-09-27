@@ -1,14 +1,16 @@
 import * as d3 from 'd3';
 import Popup from '@flourish/popup';
+import * as d3_annotation from 'd3-svg-annotation';
 import helper from '../../js/helper-functions';
 import tooltipTemplate from '../TooltipTemplate/tooltip-template';
 import './DrawChart.css';
 
 
 // THE GOOD STUFF
-let id, height, width, x, y, barWidth;
+let height, width, x, y, drawAnnotations,drawLabels;
 const yTicks = 5;
 const breakpoint = 600;
+const popup = Popup();
 const margin = {
 	top: 10,
 	right: 15,
@@ -16,7 +18,8 @@ const margin = {
 	left: 45
 };
 
-const popup = Popup();
+console.log(d3_annotation)
+
 
 async function DrawChart(props) {
 	// convert dates into something useful
@@ -36,7 +39,7 @@ async function DrawChart(props) {
 		width = (dims.width / 3) - margin.left - margin.right;
 	}
 	
-
+	setupAnnotations(height, margin)
 	console.log(dims)
 
 	// setup our svg
@@ -46,9 +49,10 @@ async function DrawChart(props) {
 			.attr('class', d => d.party.toLowerCase())
 			.style('height', `${height}px`)
 			.style('width', `${width + margin.left}px`)
-			.text(d => d.party)
+			// .text(d => d.party)s
 			.append('g')
 				.attr('transform', `translate(${margin.left}, ${margin.top})`)
+
 
 
     // Add axes
@@ -69,7 +73,12 @@ async function DrawChart(props) {
     		.attr('height', d => y(0) - y(d.total))
     		.attr('width', x.bandwidth())
     		.on('mouseover', handleMouseOver)
-    		.on('mouseout', handleMouseOut)
+    		.on('mouseout', handleMouseOut);
+
+
+	svg.append('g')
+		.attr('class', 'annotation-group')
+		.call(drawAnnotations)
 }
 
 
@@ -93,9 +102,38 @@ const parseData = (props) => {
 	});
 
 	// sort so it matches the order in the big numbers section
-	return [...data.filter(d => d.party === order[0]), ...data.filter(d => d.party === order[1]), ...data.filter(d => d.party === order[2])];
+	return [
+		...data.filter(d => d.party === order[0]),
+		...data.filter(d => d.party === order[1]),
+		...data.filter(d => d.party === order[2])
+	];
 };
 
+const setupAnnotations = (height, margin) => {
+	const annotations = [{
+		className: 'annotation-text',
+		data: { x: '09/21/2020'},
+		note: { 
+			align: 'middle',
+			title: 'Election called'
+		},
+		subject: {
+			y1: margin.top + 25,
+			y2: height - margin.bottom
+		},
+		y: margin.top - 15
+	}];
+
+	drawAnnotations = d3_annotation.annotation()
+		.type(d3_annotation.annotationXYThreshold)
+		// gives you access to any data in the annotations array
+		.accessors({
+			x: d => x(new Date(d.x)),
+			y: d => y(d.y)
+		})
+		.annotations(annotations)
+		.textWrap(30)
+}
 const xAxis = g => {
 	const xScale = x.domain();
 	g.attr('transform', `translate(0, ${height - margin.bottom})`)
@@ -109,7 +147,6 @@ const xAxis = g => {
 };
 
 const yAxis = g => {
-	const g1 = d3.select(g._groups[0][0]);
 	g.attr('class', 'y-axis axis')
 		.call(d3.axisLeft(y)
 			.ticks(yTicks)

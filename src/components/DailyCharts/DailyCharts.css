@@ -9,9 +9,10 @@
 /*	flex: 1;
 	width: 100%;*/
 }
-.axis line {
+
+/* AXIS */
+.daily-charts #charts .axis line {
   stroke: var(--grey04);
-  /*stroke-opacity: 1;*/
   shape-rendering: crispEdges;
 }
 .daily-charts #charts .axis text {
@@ -20,6 +21,7 @@
 	font-size: 0.9rem;
 }
 
+/* PARTY COLOURS*/
 .daily-charts #charts .green rect {
 	fill: var(--greenbc);
 }
@@ -30,7 +32,24 @@
 	fill: var(--npdbc);
 }
 
+/* ANNOTATIONS */
+.daily-charts #charts .annotations .subject {
+	color: var(--grey02);
+	stroke-dasharray: 10 5;
+}
 
+.daily-charts #charts .annotations .note-line {
+	display: none;
+}
+
+.daily-charts #charts .annotations .annotation-note-title tspan {
+	font-family: BentonSansCond-Regular, Helvetica, sans-serif;
+	font-size: 0.9rem;
+	text-align: center;
+}
+
+
+/* SOURCE */
 .daily-charts .source {
 	color: var(--grey01);
 	font-size: 0.9rem;

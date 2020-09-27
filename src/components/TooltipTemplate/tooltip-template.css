@@ -9,7 +9,7 @@
 }
 
 .tooltip-content .date {
-	color: #898B8E;
+	color: var(--grey02);
 	font-size: 0.8rem;
 	margin-bottom: 5px;
 	text-transform: uppercase;
