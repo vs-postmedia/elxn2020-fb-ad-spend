@@ -11,7 +11,7 @@
 .tooltip-content .date {
 	color: var(--grey02);
 	font-size: 0.8rem;
-	margin-bottom: 5px;
+	margin-bottom: 0;
 	text-transform: uppercase;
 }
 .tooltip-content .total-amount {

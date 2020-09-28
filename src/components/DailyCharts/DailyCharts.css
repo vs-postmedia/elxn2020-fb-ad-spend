@@ -2,6 +2,10 @@
 	margin-bottom: 15px;
 }
 
+.App .daily-charts h2 .h2-small {
+	font-size: 1.15rem;
+}
+
 .daily-charts #charts {
 	display: flex;
 	flex-direction: column;
@@ -12,6 +16,7 @@
 .daily-charts #charts > svg {
 	margin-bottom: 20px;
 }
+
 
 /* AXIS */
 .daily-charts #charts .axis line {
@@ -27,9 +32,11 @@
 .daily-charts #charts .label-text {
 	font-family: BentonSansCond-Regular, Helvetica, sans-serif;
 	font-size: 1.25rem;
-	transform: translate(-45px, 10px);
+	transform: translate(-25px, 5px);
 
 }
+
+
 /* PARTY COLOURS*/
 .daily-charts #charts .label-text.green,
 .daily-charts #charts .green rect {

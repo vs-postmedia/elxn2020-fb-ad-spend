@@ -12,20 +12,15 @@ const yTicks = 5;
 const breakpoint = 600;
 const popup = Popup();
 const margin = {
-	top: 10,
+	top: 20,
 	right: 25,
 	bottom: 40,
-	left: 45
+	left: 25
 };
-
-console.log(d3_annotation)
-
 
 async function DrawChart(props) {
 	// convert dates into something useful
 	const data = await parseData(props);
-
-	console.log(data)
 
 	// get container element & determine dimensions
 	const chart = d3.select('#charts');
@@ -40,10 +35,6 @@ async function DrawChart(props) {
 	}
 	
 	annotations = setupAnnotations(height, margin);
-	console.log(dims)
-
-	console.log(height)
-
 	// setup our svg
 	const svg = chart.selectAll('svg')
 		.data(data)
@@ -99,7 +90,6 @@ async function DrawChart(props) {
 }
 
 const drawAnnotations = () => {
-	console.log(annotations)
 	d3_annotation.annotation()
 		.type(d3_annotation.annotationXYThreshold)
 		// gives you access to any data in the annotations array
@@ -177,7 +167,7 @@ const yAxis = g => {
 		.call(d3.axisLeft(y)
 			.ticks(yTicks)
 			.tickSize(-width)
-			.tickFormat(d => `$${helper.numberWithCommas(d)}`)
+			.tickFormat(d => `$${helper.numberWithCommas(d / 1000)}`)
 		)
 		.call(g => g.select('.domain').remove()); // removed the line
 };
