@@ -1,6 +1,6 @@
 import * as d3 from 'd3';
 import Popup from '@flourish/popup';
-import * as d3_annotation from 'd3-svg-annotation';
+// import * as d3_annotation from 'd3-svg-annotation';
 import helper from '../../js/helper-functions';
 import tooltipTemplate from '../TooltipTemplate/tooltip-template';
 import './DrawChart.css';
@@ -12,7 +12,7 @@ const yTicks = 5;
 const breakpoint = 600;
 const popup = Popup();
 const margin = {
-	top: 20,
+	top: 10,
 	right: 25,
 	bottom: 40,
 	left: 25
@@ -70,41 +70,6 @@ async function DrawChart(props) {
     		.attr('width', x.bandwidth())
     		.on('mouseover', handleMouseOver)
     		.on('mouseout', handleMouseOut);
-
-    // annotations
-    svg.append('g')
-		.attr('class', 'annotation-group')
-		.call(drawAnnotations)
-
-
-	// svg.append('g')
-	// 	.data(data)
-	// 	.attr('class', 'annotation-group')
-	// 	.append('text')
-	// 	.text('Election called')
-	// 	.attr()
-	// 	.style('transform', d => {
-	// 		console.log(d)
-	// 		return `translate(0, 10px)`
-	// 	})
-}
-
-const drawAnnotations = () => {
-	d3_annotation.annotation()
-		.type(d3_annotation.annotationXYThreshold)
-		// gives you access to any data in the annotations array
-		.accessors({
-			x: d => {
-				console.log(x)
-				return x(new Date(d.x))
-			},
-			y: d =>{
-				console.log(y)
-				return y(d.y)
-			}
-		})
-		.annotations(annotations)
-		.textWrap(30);
 }
 
 const handleMouseOut = (d) => {
@@ -158,7 +123,7 @@ const xAxis = g => {
 			.tickSize(0)
 			.tickFormat(d3.timeFormat('%b. %d'))
 			.tickPadding([10])
-			.tickValues([xScale[0], 	xScale[xScale.length - 1]])
+			.tickValues([xScale[0], xScale[xScale.length - 1]])
 		)
 };
 
