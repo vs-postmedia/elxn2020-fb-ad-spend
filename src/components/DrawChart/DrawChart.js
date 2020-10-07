@@ -12,7 +12,7 @@ const yTicks = 5;
 const breakpoint = 600;
 const popup = Popup();
 const margin = {
-	top: 10,
+	top: 15,
 	right: 25,
 	bottom: 40,
 	left: 25
