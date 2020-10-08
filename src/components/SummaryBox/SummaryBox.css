@@ -27,10 +27,10 @@
 
 @media (min-width: 525px) {
 	.summary-box .big-num {
-		font-size: 3.25rem;
-		line-height: 4rem;
+		font-size: 2.75rem;
+		line-height: 3rem;
 	}
 	.summary-box .label {
-		font-size: 1.5rem;
+		font-size: 1.25rem;
 	}
 }
