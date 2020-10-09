@@ -68,14 +68,18 @@ async function DrawChart(props) {
     		.attr('y', d => y(d.total))
     		.attr('height', d => y(0) - y(d.total))
     		.attr('width', x.bandwidth())
-    		.on('mouseover', handleMouseOver)
-    		.on('mouseout', handleMouseOut);
+    		.on('mouseover touchstart', handleMouseOver)
+    		.on('mouseout touchend', handleMouseOut);
 }
 
-const handleMouseOut = (d) => {
+const handleMouseOut = () => {
 	popup.hide();
 }
 const handleMouseOver = (d) => {
+	console.log(d)
+	d.preventDefault();
+	d.stopPropagation();
+
 	popup.point(d.clientX, d.clientY);
 	popup.html(tooltipTemplate(d));
 	popup.draw();
