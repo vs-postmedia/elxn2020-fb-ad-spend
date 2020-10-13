@@ -7,7 +7,7 @@ const adSpendUrl = 'https://vs-postmedia-data.sfo2.digitaloceanspaces.com/elxn/a
 function App() {
 	return (
 	  	<div className="App">
-	  		<h1>The Liberals are outspending the NDP and the Greens by a wide margin...</h1>
+	  		<h2>The Liberals are outspending the NDP and the Greens by a wide margin...</h2>
 	  		<AdSpendTracker	
 	  			dataUrl={adSpendUrl}>
 	  		</AdSpendTracker>
