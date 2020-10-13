@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/elxn2020-fb-ad-spend/static/css/main.375df0cb.chunk.css",
-    "main.js": "/elxn2020-fb-ad-spend/static/js/main.1b295e6a.chunk.js",
-    "main.js.map": "/elxn2020-fb-ad-spend/static/js/main.1b295e6a.chunk.js.map",
+    "main.js": "/elxn2020-fb-ad-spend/static/js/main.c19dd4dd.chunk.js",
+    "main.js.map": "/elxn2020-fb-ad-spend/static/js/main.c19dd4dd.chunk.js.map",
     "runtime-main.js": "/elxn2020-fb-ad-spend/static/js/runtime-main.d0cd6232.js",
     "runtime-main.js.map": "/elxn2020-fb-ad-spend/static/js/runtime-main.d0cd6232.js.map",
     "static/js/2.e449c628.chunk.js": "/elxn2020-fb-ad-spend/static/js/2.e449c628.chunk.js",
     "static/js/2.e449c628.chunk.js.map": "/elxn2020-fb-ad-spend/static/js/2.e449c628.chunk.js.map",
     "index.html": "/elxn2020-fb-ad-spend/index.html",
-    "precache-manifest.9112cecda60d62a05bf263e91c231f4f.js": "/elxn2020-fb-ad-spend/precache-manifest.9112cecda60d62a05bf263e91c231f4f.js",
+    "precache-manifest.36441b3ea73dc0058c0226515f06d0c2.js": "/elxn2020-fb-ad-spend/precache-manifest.36441b3ea73dc0058c0226515f06d0c2.js",
     "service-worker.js": "/elxn2020-fb-ad-spend/service-worker.js",
     "static/css/main.375df0cb.chunk.css.map": "/elxn2020-fb-ad-spend/static/css/main.375df0cb.chunk.css.map",
     "static/js/2.e449c628.chunk.js.LICENSE.txt": "/elxn2020-fb-ad-spend/static/js/2.e449c628.chunk.js.LICENSE.txt",
@@ -23,6 +23,6 @@
     "static/js/runtime-main.d0cd6232.js",
     "static/js/2.e449c628.chunk.js",
     "static/css/main.375df0cb.chunk.css",
-    "static/js/main.1b295e6a.chunk.js"
+    "static/js/main.c19dd4dd.chunk.js"
   ]
 }

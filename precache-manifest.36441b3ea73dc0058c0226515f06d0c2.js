@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1cd61f6b308da247beec69b5ebd86343",
+    "revision": "731577b6ae6a89b913972b758873bc02",
     "url": "/elxn2020-fb-ad-spend/index.html"
   },
   {
-    "revision": "f524f07dc324c71319c8",
+    "revision": "1806dc105b41ae77ad5b",
     "url": "/elxn2020-fb-ad-spend/static/css/main.375df0cb.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/elxn2020-fb-ad-spend/static/js/2.e449c628.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f524f07dc324c71319c8",
-    "url": "/elxn2020-fb-ad-spend/static/js/main.1b295e6a.chunk.js"
+    "revision": "1806dc105b41ae77ad5b",
+    "url": "/elxn2020-fb-ad-spend/static/js/main.c19dd4dd.chunk.js"
   },
   {
     "revision": "6332cfa16e9cde746366",
