@@ -3,6 +3,9 @@
 	max-width: 750px;
 }
 
+.App > h2 {
+	margin-bottom: 20px !important;
+}
 @media only screen and (max-width: 600px) {
 	.App h1 {
    		font-size: 1.65rem !important;

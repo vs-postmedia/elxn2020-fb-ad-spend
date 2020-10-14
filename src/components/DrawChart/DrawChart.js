@@ -9,7 +9,7 @@ import './DrawChart.css';
 // THE GOOD STUFF
 let annotations, height, width, x, y;
 const yTicks = 5;
-const breakpoint = 600;
+const breakpoint = 500;
 const popup = Popup();
 const margin = {
 	top: 15,

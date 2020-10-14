@@ -27,7 +27,7 @@
 
 @media (min-width: 500px)  {
 	.stat-box .big-num {
-		font-size: 2.75rem;
+		font-size: 2.5rem;
 		line-height: 3rem;
 	}
 	.stat-box .label {
