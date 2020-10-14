@@ -5,8 +5,8 @@ import './tooltip-template.css';
 const formatTime = d3.timeFormat('%B %d');
 
 function tooltip(data) {
-	const total = data.path[0].__data__.total;
-	const date = data.path[0].__data__.date;
+	const total = data.target.__data__.total;
+	const date = data.target.__data__.date;
 	const template = `
 		<div class="tooltip-content">
 			<p class="date">${formatTime(date)}</p>
