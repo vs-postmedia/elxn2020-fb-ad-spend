@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/elxn2020-fb-ad-spend/precache-manifest.e5b2cb15fccb0caeb8f95b71faa5259d.js"
+  "/elxn2020-fb-ad-spend/precache-manifest.6063b7f3e6abc58833a18582ef552f85.js"
 );
 
 self.addEventListener('message', (event) => {
