@@ -48,7 +48,7 @@
 }
 .daily-charts #charts .label-text.ndp,
 .daily-charts #charts .ndp rect {
-	fill: var(--npdbc);
+	fill: var(--ndpbc);
 }
 
 /* ANNOTATIONS */
